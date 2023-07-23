@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>中秋烤肉活動報到表格</title>
+    <style>
+        /* ...請保留之前的CSS樣式... */
+    </style>
+    <!-- 加入 Google reCAPTCHA 腳本 -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>中秋烤肉活動報到表格</h2>
+        <form onsubmit="return submitForm(event)">
+            <!-- ...原本的表單內容... -->
+            <!-- 加入 reCAPTCHA 認證 -->
+            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+            <input type="submit" value="報名參加">
+        </form>
+    </div>
+
+    <script>
+        // 提交表單並處理資料的函數
+        function submitForm(event) {
+            event.preventDefault();
+
+            // 在這裡檢查 reCAPTCHA 是否通過驗證
+            // 在真實應用中，您需要將 YOUR_RECAPTCHA_SECRET_KEY 替換為您的 reCAPTCHA 秘密金鑰，
+            // 並將表單資料傳送到後端以進行驗證
+
+            // 假設 reCAPTCHA 驗證成功
+            const recaptchaResponse = "recaptcha_response_here";
+
+            // 取得表單資料
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const num_of_guests = document.getElementById('num_of_guests').value;
+
+            // 在這裡將表單資料傳送到後端處理
+            // 以下僅是示例，並不會將資料真正儲存至資料庫
+
+            // 假設成功儲存至資料庫
+            const successMessage = "報名成功！感謝您的參加！";
+
+            // 假設資料儲存失敗
+            const errorMessage = "報名失敗，請稍後再試。";
+
+            // 在真實應用中，您應該使用 fetch 或其他方式將表單資料送至後端處理
+
+            // 假設這裡是後端傳回的處理結果
+            const backendResponse = true; // true 為成功，false 為失敗
+
+            if (backendResponse) {
+                alert(successMessage);
+            } else {
+                alert(errorMessage);
+            }
+        }
+    </script>
+</body>
+</html>
